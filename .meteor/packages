@@ -9,5 +9,5 @@ insecure
 bootstrap
 accounts-ui
 jquery
-handlebars
+accounts-password
 
