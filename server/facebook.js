@@ -34,6 +34,7 @@ if (Meteor.isServer) {
         });
 }
 
+
 function Facebook(accessToken) {
     this.fb = Meteor.require('fbgraph');
     this.accessToken = accessToken;
