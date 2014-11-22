@@ -3,10 +3,24 @@
 </head>
 
 <body>
+
+  <h1>WATBOOKS DO YOU NEED?</h1>
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="box">
+  <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span><form> 
+
+      <input type="search" id="search" placeholder="Search..." />
+      <input type="submit" class ="btn" value="Search">
+    </form>
+  </div>
+</div>
+
     <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '1559639774266150',
+          appId      : 'your-app-id',
           xfbml      : true,
           version    : 'v2.1'
         });
@@ -20,14 +34,44 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
-  <h1>Welcome to Meteor!</h1>
+ 
+<div>
   {{> loginButtons}}
-  {{> hello}}
+</div>
+ 
+
   <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+  <div class="tableResults">
+    {{> displayResults}}
+</div>
+
+ <div id="list1" class="dropdown-check-list">
+        <span class="anchor">Search Field</span>
+        <ul class="items">
+            <li><input type="checkbox" />Title </li>
+            <li><input type="checkbox" />Author</li>
+            <li><input type="checkbox" />ISBN</li>
+            <li><input type="checkbox" />Course</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+
+        var checkList = document.getElementById('list1');
+        checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+            if (checkList.classList.contains('visible'))
+                checkList.classList.remove('visible');
+            else
+                checkList.classList.add('visible');
+        }
+
+    </script>
+
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name= "displayResults">
+  <table>
+    {{#each book}}
+    <tr><td>{{BookName}}</td><td>{{Author}}</td><td>{{ISBN}}</td><td>{{Price}}</td><td>{{Edition}}</td><td>{{Course}}</td></tr>
+    {{/each}}
+  </table>
 </template>
-
