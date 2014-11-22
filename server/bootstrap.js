@@ -44,9 +44,9 @@ Meteor.startup(function () {
       UWBooks.insert(books[i]);
     };
 
-  },
+  }
 
-    if (Fedsbooks.find({}).count() === 0) {
+    if (FedBooks.find({}).count() === 0) {
     var books = [
       {
         createdAt: (new Date()),
@@ -77,9 +77,9 @@ Meteor.startup(function () {
     ];
 
     for (var i=0; i<books.length; ++i) {
-      Fedsbooks.insert(books[i]);
+      FedBooks.insert(books[i]);
     };
 
-  },
+  }
 
 });
