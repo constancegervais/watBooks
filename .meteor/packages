@@ -11,4 +11,6 @@ accounts-password
 service-configuration
 accounts-facebook
 underscore
-
+meteorhacks:npm
+autopublish
+npm-container
